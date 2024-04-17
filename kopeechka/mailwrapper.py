@@ -14,7 +14,7 @@ class KopeechkaMailWrapper:
     def get_mail(
         self,
         site: SITES,
-        mail_type: MAIL_TYPES,
+        mail_type: MAIL_TYPES | str,
         regex: str = "",
     ) -> str:
         url = f"{self.__base_url}/mailbox-get-email"
