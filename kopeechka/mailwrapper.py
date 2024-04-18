@@ -5,6 +5,7 @@ import httpx
 
 SITES = Literal["telegram.org", "tiktok.com"]
 MAIL_TYPES = [
+    "all",
     "gmail.com",
     "outlook.com",
     "rambler.ru",
