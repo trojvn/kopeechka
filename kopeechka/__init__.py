@@ -1,1 +1,1 @@
-from .mailwrapper import KopeechkaMailWrapper
+from .mailwrapper import KopeechkaMailWrapper, MAIL_TYPES
