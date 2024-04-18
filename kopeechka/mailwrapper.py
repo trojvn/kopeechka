@@ -4,6 +4,16 @@ from typing import Literal
 import httpx
 
 SITES = Literal["telegram.org", "tiktok.com"]
+MAIL_TYPES = [
+    "gmail.com",
+    "outlook.com",
+    "rambler.ru",
+    "yahoo.com",
+    "hotmail.com",
+    "lenta.ru",
+    "ya.ru",
+    "icloud.com",
+]
 
 
 class KopeechkaMailWrapper:
