@@ -4,7 +4,6 @@ from typing import Literal
 import httpx
 
 SITES = Literal["telegram.org", "tiktok.com"]
-MAIL_TYPES = Literal["gmail.com", "rambler.ru", "outlook.com"]
 
 
 class KopeechkaMailWrapper:
@@ -14,7 +13,7 @@ class KopeechkaMailWrapper:
     def get_mail(
         self,
         site: SITES,
-        mail_type: MAIL_TYPES | str,
+        mail_type: str,
         regex: str = "",
     ) -> str:
         url = f"{self.__base_url}/mailbox-get-email"
