@@ -40,11 +40,13 @@ class KopeechkaMailWrapper:
         return "ERROR"
 
     # noinspection PyShadowingBuiltins
-    def get_message(self, id: str) -> str:
+    def get_message(self, id: str, full: int) -> str:
         url = f"{self.__base_url}/mailbox-get-message"
-        params = {"token": self.__token, "id": id}
+        params = {"token": self.__token, "id": id, "full": full}
         with contextlib.suppress(Exception):
             json_data = httpx.get(url, params=params).json()
+            if full:
+                return str(json_data["fullmessage"])
             return str(json_data["value"])
         return "WAIT_LINK"
 
