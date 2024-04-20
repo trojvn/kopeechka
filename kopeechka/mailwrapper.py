@@ -40,7 +40,7 @@ class KopeechkaMailWrapper:
         return "ERROR"
 
     # noinspection PyShadowingBuiltins
-    def get_message(self, id: str, full: int) -> str:
+    def get_message(self, id: str, full: int = 0) -> str:
         url = f"{self.__base_url}/mailbox-get-message"
         params = {"token": self.__token, "id": id, "full": full}
         with contextlib.suppress(Exception):
