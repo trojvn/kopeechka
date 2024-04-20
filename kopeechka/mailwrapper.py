@@ -47,3 +47,11 @@ class KopeechkaMailWrapper:
             json_data = httpx.get(url, params=params).json()
             return str(json_data["value"])
         return "WAIT_LINK"
+
+    def reorder(self, site: SITES, mail: str, regex: str = "") -> str:
+        url = f"{self.__base_url}/mailbox-reorder"
+        params = {"token": self.__token, "email": mail, "site": site, "regex": regex}
+        with contextlib.suppress(Exception):
+            json_data = httpx.get(url, params=params).json()
+            return str(json_data["id"])
+        return "ERROR"
